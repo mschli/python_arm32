@@ -1,11 +1,11 @@
-name: publish-base
+name: publish-pipe
 
 on:
   push:
     branches:
       - 'main'
     paths:
-      - 'base/*'
+      - 'pipe/*'
 
 jobs:
   docker:
@@ -30,8 +30,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./base
-          file: ./base/Dockerfile
+          context: ./pipe
+          file: ./pipe/Dockerfile
           platforms: linux/arm/v7
           push: true
-          tags: mschli/python_base:latest
+          tags: mschli/python_base_pipe:latest
