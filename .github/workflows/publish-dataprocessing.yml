@@ -1,4 +1,4 @@
-name: ci
+name: build-dataprocessing
 
 on:
   push:
@@ -28,7 +28,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./dataprocessing
+          file: ./dataprocessing/Dockerfile
           platforms: linux/arm/v7
           push: true
           tags: mschli/python_arm:latest
