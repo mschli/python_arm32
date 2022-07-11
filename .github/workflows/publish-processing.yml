@@ -1,4 +1,4 @@
-name: build-dataprocessing
+name: publish-processing
 
 on:
   push:
@@ -28,8 +28,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./dataprocessing
-          file: ./dataprocessing/Dockerfile
+          context: ./processing
+          file: ./processing/Dockerfile
           platforms: linux/arm/v7
           push: true
-          tags: mschli/python_arm:latest
+          tags: mschli/python_arm/processing:latest
