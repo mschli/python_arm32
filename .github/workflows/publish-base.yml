@@ -1,6 +1,7 @@
 name: publish-base
 
-push:
+on:
+  push:
     branches:
       - 'main'
     paths:
