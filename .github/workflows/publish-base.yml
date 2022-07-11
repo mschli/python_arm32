@@ -32,4 +32,4 @@ jobs:
           file: ./base/Dockerfile
           platforms: linux/arm/v7
           push: true
-          tags: mschli/python_arm/base:latest
+          tags: mschli/python_base/base:latest
