@@ -1,9 +1,10 @@
 name: publish-base
 
-on:
-  push:
+push:
     branches:
       - 'main'
+    paths:
+      - 'base/*'
 
 jobs:
   docker:
@@ -32,4 +33,4 @@ jobs:
           file: ./base/Dockerfile
           platforms: linux/arm/v7
           push: true
-          tags: mschli/python_base/base:latest
+          tags: mschli/python_arm32/base:latest
