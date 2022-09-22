@@ -14,6 +14,7 @@ ENV PATH=/venv/bin:$PATH
 
 # Install the Python library dependencies into the virtual environment.
 WORKDIR /my_app
+COPY /requirements.txt /requirements.txt
 RUN pip install --upgrade pip==22.1.2
 RUN pip install -r /requirements.txt
 
