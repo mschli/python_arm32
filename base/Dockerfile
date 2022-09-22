@@ -13,10 +13,8 @@ RUN python3 -m venv /venv
 ENV PATH=/venv/bin:$PATH
 
 # Install the Python library dependencies into the virtual environment.
-WORKDIR /app
-COPY requirements.txt .
+WORKDIR /my_app
 RUN pip install --upgrade pip==22.1.2
-RUN pip install -r requirements.txt
 
 # Final stage:
 FROM ${BASE_IMAGE}
