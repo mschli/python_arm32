@@ -1,5 +1,5 @@
 # Define base image
-ARG BASE_IMAGE=arm32v7/python:3.8.0-slim
+ARG BASE_IMAGE=arm32v7/python:3.8.16-slim
 
 # Build stage
 FROM ${BASE_IMAGE} AS build
@@ -21,8 +21,8 @@ RUN pip install -r requirements.txt
 # Final stage:
 FROM ${BASE_IMAGE}
 
-# Install the runtime-only C library dependencies we need.
-# (nothing to do for base image)
+# Install the runtime-only dependencies we need.
+RUN apt-get -y update && apt-get -y upgrade && apt-get install -y apt-transport-https
 
 # Copy the virtual environment from the first stage.
 COPY --from=build /venv /venv
